@@ -1,0 +1,10 @@
+<h1>Our Students</h1>
+<p>(total <%= pluralize(@students.count, 'student') %>)</p>
+
+<%= render 'search' %>
+
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
+
+<%= link_to "Back to Home", "/" %>
